@@ -1,0 +1,31 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = 'Meu Portfolio' } = Astro.props;
+---
+
+<header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
+        LP
+      </div>
+      <span class="font-bold text-lg hidden sm:inline">{title}</span>
+    </div>
+    
+    <ul class="flex items-center gap-6">
+      <li><a href="#sobre" class="hover:text-indigo-400 transition">Sobre</a></li>
+      <li><a href="#projetos" class="hover:text-indigo-400 transition">Projetos</a></li>
+      <li><a href="#habilidades" class="hover:text-indigo-400 transition">Habilidades</a></li>
+      <li><a href="#contato" class="hover:text-indigo-400 transition">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>

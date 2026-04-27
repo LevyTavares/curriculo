@@ -1,0 +1,52 @@
+---
+interface Skill {
+  category: string;
+  items: string[];
+}
+
+const skills: Skill[] = [
+  {
+    category: 'Frontend',
+    items: ['HTML', 'CSS', 'JavaScript', 'React', 'Vue.js', 'Tailwind CSS', 'TypeScript']
+  },
+  {
+    category: 'Backend',
+    items: ['Node.js', 'Express', 'Python', 'MongoDB', 'PostgreSQL', 'Firebase']
+  },
+  {
+    category: 'Ferramentas',
+    items: ['Git', 'Docker', 'VS Code', 'Webpack', 'npm', 'Figma']
+  },
+  {
+    category: 'Soft Skills',
+    items: ['Comunicação', 'Trabalho em Equipe', 'Resolução de Problemas', 'Liderança']
+  }
+];
+---
+
+<section id="habilidades" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl sm:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">
+      Habilidades
+    </h2>
+    <p class="text-slate-400 text-lg mb-12 max-w-2xl">
+      Tecnologias e competências que domino
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {skills.map((skillGroup) => (
+        <div class="bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg p-6 border border-slate-600 hover:border-indigo-500 transition">
+          <h3 class="text-xl font-bold mb-4 text-indigo-400">{skillGroup.category}</h3>
+          <ul class="space-y-2">
+            {skillGroup.items.map((item) => (
+              <li class="flex items-center gap-2 text-slate-300 hover:text-indigo-300 transition">
+                <span class="w-2 h-2 bg-indigo-500 rounded-full"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
